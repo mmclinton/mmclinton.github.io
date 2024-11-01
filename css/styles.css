@@ -105,6 +105,12 @@ h2 {
     margin-top: 0rem;
 }
 
+.color-h2 {
+    color: #62c4ff;
+    font-size: 1.3rem;
+    margin-top: 0rem;
+}
+
 /* Paragraph styling for blog content */
 p {
     line-height: 1.6;
