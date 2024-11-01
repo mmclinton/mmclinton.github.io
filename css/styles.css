@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* Main container with max width of 120 characters, centered */
+/* Main container with max width of 80 characters, centered */
 .container {
     max-width: 80ch;
     margin: 0 auto;
@@ -17,8 +17,12 @@ body {
 /* Header styling using flexbox */
 header {
     display: flex;
-    justify-content: space-between; /* Space between title and About link */
+    justify-content: space-between; /* Space between title and nav links */
     align-items: center;            /* Center items vertically */
+}
+
+main {
+    padding-top: 2.5rem;
 }
 
 /* Site title styling */
@@ -26,6 +30,21 @@ header {
     color: #62c4ff;             /* Light blue for the title */
     font-size: 1.5rem;         /* Adjusted font size */
     margin: 0;                 /* Remove default margin */
+    position: relative;         /* sudo element positioning */
+    display: inline-block;
+    padding: 0.25rem;
+}
+
+.site-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+    z-index: -1;
 }
 
 .site-title a {
@@ -39,7 +58,17 @@ header {
 }
 
 .site-title a:hover {
-    color: #62c4ff;            /* Maintain blue color on hover */
+    color: white;
+}
+
+.site-titel a:hover::after {
+    background-color: #62c4ff;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;               /* Use flexbox for links */
+    gap: 1rem;                  /* Space between links */
 }
 
 /* About link styling */
@@ -51,6 +80,18 @@ header {
 
 /* Prevent About link color change */
 .about-link:hover {
+    color: lightgrey;          /* Maintain light grey color on hover */
+}
+
+/* Blog link styling */
+.blog-link {
+    color: lightgrey;          /* Light grey color */
+    text-decoration: none;      /* Remove underline from link */
+    font-size: 1rem;           /* Smaller font size */
+}
+
+/* Prevent Blog link color change */
+.blog-link:hover {
     color: lightgrey;          /* Maintain light grey color on hover */
 }
 
