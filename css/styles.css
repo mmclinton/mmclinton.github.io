@@ -25,44 +25,41 @@ main {
     padding-top: 2.5rem;
 }
 
+
 /* Site title styling */
-.site-title {
-    color: #62c4ff;             /* Light blue for the title */
-    font-size: 1.5rem;         /* Adjusted font size */
-    margin: 0;                 /* Remove default margin */
-    position: relative;         /* sudo element positioning */
-    display: inline-block;
-    padding: 0.25rem;
+h1.site-title {
+    color: #62c4ff;               /* Light blue for the title */
+    font-size: 1.5rem;           /* Adjusted font size */
+    margin: 0;                   /* Remove default margin */
+    display: inline-block;        /* Allow padding and background */
+    padding: 0.25rem;             /* Padding for the hover effect */
+    position: relative;           /* Positioning for the pseudo-element */
 }
 
-.site-title::after {
-    content: '';
-    position: absolute;
+/* Hover effect */
+h1.site-title::after {
+    content: '';                  /* Required for the pseudo-element */
+    position: absolute;           /* Position it relative to the title */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparent;
-    transition: background-color 0.2s ease;
-    z-index: -1;
+    background-color: transparent; /* Initially transparent */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    z-index: -1;                 /* Place it behind the text */
+}
+
+h1.site-title:hover {
+    color: #222225;                /* Change text color to background color */
+}
+
+h1.site-title:hover::after {
+    background-color: #62c4ff;   /* Blue background on hover */
 }
 
 .site-title a {
-    text-decoration: none;      /* Remove underline from link */
-    color: inherit;            /* Use the inherited color */
-}
-
-/* Prevent link color change */
-.site-title a:visited {
-    color: #62c4ff;            /* Maintain blue color for visited links */
-}
-
-.site-title a:hover {
-    color: white;
-}
-
-.site-titel a:hover::after {
-    background-color: #62c4ff;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Navigation links container */
@@ -80,7 +77,7 @@ main {
 
 /* Prevent About link color change */
 .about-link:hover {
-    color: lightgrey;          /* Maintain light grey color on hover */
+    color: white;          /* Maintain light grey color on hover */
 }
 
 /* Blog link styling */
@@ -92,7 +89,7 @@ main {
 
 /* Prevent Blog link color change */
 .blog-link:hover {
-    color: lightgrey;          /* Maintain light grey color on hover */
+    color: white;          /* Maintain light grey color on hover */
 }
 
 /* Blog post title styling */
@@ -120,4 +117,57 @@ footer {
     text-align: center;
     font-size: 0.8rem;
     margin-top: 1rem;
+}
+
+/* Blog list container */
+#blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Individual blog preview styling */
+.blog-preview h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.blog-preview p {
+    color: #d1d1d1; /* Slightly lighter than main text */
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Styling for the "More" link */
+.more-link {
+    font-size: 1rem;
+    color: #62c4ff;
+    text-decoration: none;
+    padding: 0.25rem;
+    position: relative;
+}
+
+.more-link:hover {
+    color: #222225; /* Match the site-title hover color */
+}
+
+.more-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: -1;
+}
+
+.more-link:hover::after {
+    background-color: #62c4ff;
 }
