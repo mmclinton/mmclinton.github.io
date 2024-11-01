@@ -1,8 +1,8 @@
 /* Apply the JetBrains Mono font and set up the dark theme */
 body {
     font-family: 'JetBrains Mono', monospace;
-    background-color: #222225;  /* Dark background */
-    color: #ffffff;             /* White text */
+    background-color: #222225;
+    color: #ffffff;
     margin: 0;
     padding: 0;
 }
@@ -17,44 +17,56 @@ body {
 /* Header styling using flexbox */
 header {
     display: flex;
-    justify-content: space-between; /* Space between title and nav links */
-    align-items: center;            /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
 }
-
-main {
-    padding-top: 2.5rem;
-}
-
 
 /* Site title styling */
 h1.site-title {
-    color: #62c4ff;               /* Light blue for the title */
-    font-size: 1.5rem;           /* Adjusted font size */
-    margin: 0;                   /* Remove default margin */
-    display: inline-block;        /* Allow padding and background */
-    padding: 0.25rem;             /* Padding for the hover effect */
-    position: relative;           /* Positioning for the pseudo-element */
+    color: #62c4ff;
+    font-size: 1.5rem;
+    margin: 0;
+    display: inline-block;
+    padding: 0.25rem;
+    position: relative;
 }
 
-/* Hover effect */
+/* Blinking block cursor immediately following site-title */
+.blinking-cursor {
+    display: inline-block;
+    width: 0.3em;
+    height: 1.2em;
+    background-color: #62c4ff;
+    margin-left: 0.2rem;
+    animation: blink 1.2s steps(1) infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Hover effect for site title */
+h1.site-title:hover {
+    color: #222225;
+}
+
+h1.site-title:hover::after {
+    background-color: #62c4ff;
+}
+
 h1.site-title::after {
-    content: '';                  /* Required for the pseudo-element */
-    position: absolute;           /* Position it relative to the title */
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparent; /* Initially transparent */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    z-index: -1;                 /* Place it behind the text */
-}
-
-h1.site-title:hover {
-    color: #222225;                /* Change text color to background color */
-}
-
-h1.site-title:hover::after {
-    background-color: #62c4ff;   /* Blue background on hover */
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: -1;
 }
 
 .site-title a {
@@ -64,38 +76,28 @@ h1.site-title:hover::after {
 
 /* Navigation links container */
 .nav-links {
-    display: flex;               /* Use flexbox for links */
-    gap: 1rem;                  /* Space between links */
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
 }
 
 /* About link styling */
-.about-link {
-    color: lightgrey;          /* Light grey color */
-    text-decoration: none;      /* Remove underline from link */
-    font-size: 1rem;           /* Smaller font size */
-}
-
-/* Prevent About link color change */
-.about-link:hover {
-    color: white;          /* Maintain light grey color on hover */
-}
-
-/* Blog link styling */
+.about-link,
 .blog-link {
-    color: lightgrey;          /* Light grey color */
-    text-decoration: none;      /* Remove underline from link */
-    font-size: 1rem;           /* Smaller font size */
+    color: lightgrey;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-/* Prevent Blog link color change */
+.about-link:hover,
 .blog-link:hover {
-    color: white;          /* Maintain light grey color on hover */
+    color: white;
 }
 
 /* Blog post title styling */
 h2 {
     color: #ffffff;
-    font-size: 1.3rem;         /* Adjusted font size */
+    font-size: 1.3rem;
     margin-top: 1rem;
 }
 
@@ -108,8 +110,8 @@ p {
 /* Horizontal line styling */
 .separator {
     border: none;
-    border-top: 1px solid #555; /* Dark line */
-    margin: 1.5rem 0;           /* Space above and below */
+    border-top: 1px solid #555;
+    margin: 1.5rem 0;
 }
 
 /* Footer styling */
@@ -134,10 +136,10 @@ footer {
 }
 
 .blog-preview p {
-    color: #d1d1d1; /* Slightly lighter than main text */
+    color: #d1d1d1;
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -153,7 +155,7 @@ footer {
 }
 
 .more-link:hover {
-    color: #222225; /* Match the site-title hover color */
+    color: #222225;
 }
 
 .more-link::after {
