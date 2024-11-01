@@ -1,0 +1,82 @@
+/* Apply the JetBrains Mono font and set up the dark theme */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #222225;  /* Dark background */
+    color: #ffffff;             /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container with max width of 120 characters, centered */
+.container {
+    max-width: 80ch;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header styling using flexbox */
+header {
+    display: flex;
+    justify-content: space-between; /* Space between title and About link */
+    align-items: center;            /* Center items vertically */
+}
+
+/* Site title styling */
+.site-title {
+    color: #62c4ff;             /* Light blue for the title */
+    font-size: 1.5rem;         /* Adjusted font size */
+    margin: 0;                 /* Remove default margin */
+}
+
+.site-title a {
+    text-decoration: none;      /* Remove underline from link */
+    color: inherit;            /* Use the inherited color */
+}
+
+/* Prevent link color change */
+.site-title a:visited {
+    color: #62c4ff;            /* Maintain blue color for visited links */
+}
+
+.site-title a:hover {
+    color: #62c4ff;            /* Maintain blue color on hover */
+}
+
+/* About link styling */
+.about-link {
+    color: lightgrey;          /* Light grey color */
+    text-decoration: none;      /* Remove underline from link */
+    font-size: 1rem;           /* Smaller font size */
+}
+
+/* Prevent About link color change */
+.about-link:hover {
+    color: lightgrey;          /* Maintain light grey color on hover */
+}
+
+/* Blog post title styling */
+h2 {
+    color: #ffffff;
+    font-size: 1.3rem;         /* Adjusted font size */
+    margin-top: 1rem;
+}
+
+/* Paragraph styling for blog content */
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Horizontal line styling */
+.separator {
+    border: none;
+    border-top: 1px solid #555; /* Dark line */
+    margin: 1.5rem 0;           /* Space above and below */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
