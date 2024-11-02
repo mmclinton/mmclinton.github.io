@@ -193,3 +193,39 @@ footer {
     line-height: 1.6;
     margin-bottom: 1rem;
 }
+
+.title-link {
+    font-size: 1.3rem;
+    color: #62c4ff;
+    text-decoration: none;
+    position: relative;
+}
+
+.title-link:hover {
+    color: #222225;
+}
+
+.title-link:hover::after {
+    background-color: #62c4ff;
+}
+
+.title-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: -1;
+}
+
+.hover-change {
+    transition: transform 0.3s ease;
+}
+
+.hover-change:hover {
+    transform: scale(1.01);
+}
+
