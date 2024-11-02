@@ -182,3 +182,14 @@ footer {
 .more-link:hover::after {
     background-color: #62c4ff;
 }
+
+.article-date {
+    color: #d1d1d1;
+    font-size: 0.9rem;
+}
+
+.article-content p {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}

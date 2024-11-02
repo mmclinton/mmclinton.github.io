@@ -1,103 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mmclinton | blog</title>
-
-    <!-- Link to Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Link to JetBrains Mono Font -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- Page Container -->
-    <div class="container">
-        <header>
-            <h1 class="site-title">
-                <a href="index.html">mmclinton</a>
-            </h1>
-            <span class="blinking-cursor"></span>
-            <div class="nav-links">
-                <a class="blog-link" href="blog.html">blog</a>
-                <a class="blog-link" href="https://www.github.com/mmclinton" target="_blank" rel="noopener noreferrer">github</a>
-            </div>
-        </header>
-
-        <main>
-            <section id="blog-list">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                        Ipsum.</p>
-                <hr class="separator">
-
-                <article class="blog-preview">
-                    <h2>Blog Post Title 2</h2>
-                    <p>November 1, 2024<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                        Ipsum.</p>
-                    <a href="blogs/post2.html" class="more-link">Read ></a>
-                </article>
-                <hr class="separator">
-
-                <article class="blog-preview">
-                    <h2>Blog Post Title 3</h2>
-                    <p>November 1, 2024<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                        Ipsum.</p>
-                    <a href="blogs/post3.html" class="more-link">Read ></a>
-                </article>
-                <hr class="separator">
-
-                <article class="blog-preview">
-                    <h2>Blog Post Title 4</h2>
-                    <p>November 1, 2024<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                        Ipsum.</p>
-                    <a href="blogs/post4.html" class="more-link">Read ></a>
-                </article>
-                <hr class="separator">
-
-                <article class="blog-preview">
-                    <h2>Blog Post Title 5</h2>
-                    <p>November 1, 2024<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                        Ipsum.</p>
-                    <a href="blogs/post5.html" class="more-link">Read ></a>
-                </article>
-                <hr class="separator">
-            </section>
-        </main>
-
-        <footer>
-            <p>© 2024 mmclinton</p>
-        </footer>
+---
+layout: default
+title: blog
+---
+<main>
+    {% for post in site.posts %}
+    <div>
+        <h2 class="color-h2">{{ post.title }}</h2>
+        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+        <p>{{ post.excerpt }}</p> 
+        <a href="{{ post.url }}" class="more-link">read  ></a>
+        {% unless forloop.last %}
+        <hr class="separator">
+        {% endunless %}
     </div>
-
-</body>
-
-</html>
+    {% endfor %}
+</main>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | mmclinton</title>
+
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+
+    <!-- Link to JetBrains Mono Font -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Page Container -->
+    <div class="container">
+        <header>
+            <h1 class="site-title">
+                <a href="{{ '/' | relative_url }}">mmclinton</a>
+            </h1>
+            <span class="blinking-cursor"></span>
+            <div class="nav-links">
+                <a class="blog-link" href="{{ '/blog.html' | relative_url }}">blog</a>
+                <a class="blog-link" href="https://www.github.com/mmclinton" target="_blank" rel="noopener noreferrer">github</a>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <div class="article-content">
+                    <h2 class="color-h2">{{ page.title }}</h2>
+                    <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p> 
+                    {{ content }}
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <hr class="separator">
+            <p>2024 mmclinton</p>
+        </footer>
+    </div>
+</body>
+
+</html>
