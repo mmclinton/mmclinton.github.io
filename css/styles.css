@@ -2,7 +2,7 @@
 body {
     font-family: 'JetBrains Mono', monospace;
     background-color: #222225;
-    color: #ffffff;
+    color: #d1d1d1;
     margin: 0;
     padding: 0;
 }
@@ -100,7 +100,7 @@ h1.site-title::after {
 
 /* Blog post title styling */
 h2 {
-    color: #ffffff;
+    color: #d1d1d1;
     font-size: 1.3rem;
     margin-top: 0rem;
 }
@@ -142,7 +142,7 @@ footer {
 .blog-preview h2 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: #d1d1d1;
 }
 
 .blog-preview p {
@@ -189,7 +189,7 @@ footer {
 }
 
 .article-content p {
-    color: #ffffff;
+    color: #d1d1d1;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -229,3 +229,14 @@ footer {
     transform: scale(1.01);
 }
 
+.quote-of-the-month {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #d1d1d1;
+    border-left: 4px solid #62c4ff;
+    padding-left: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
