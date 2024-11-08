@@ -8,7 +8,7 @@
 
 <h2><a class="color-h2">My 10 Favorite Books</a></h2>
 
-1. **The Road to Serfdom** by Friedrich Hayek
+1. **The Road to Serfdom** by Friedrich Hayek, 1944
 2. **The Art of Statistics** by David Spiegelhalter, 2019
 3. **Free to Choose** by Milton Friedman, 1980
 4. **Capitalism and Freedom** by Milton Friedman, 1962
